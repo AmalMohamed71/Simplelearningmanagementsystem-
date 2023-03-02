@@ -17,7 +17,8 @@ public class SimpleLearningManagementSystem {
     public static void main(String[] args) throws IOException {
             System.out.println("Welcom to LMS \n" + "Created by 'Amal Mohamed'");
             Control c= new Control();
-            
+            c.selectstudent();
+            c.menu();
     }
 
 }

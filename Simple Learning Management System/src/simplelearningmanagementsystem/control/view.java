@@ -25,7 +25,18 @@ public class view {
 //        jobject1.add((JSObject) students);
 //        jobject1.toString();
     }
-
+    public static void printall (List<Students> allstudents)
+    {
+        String fmt = "%1$2d %2$1s%t% %3$2d %4$40s%t% %5$40s%t% %6$20s%t% %7$20s%n";
+        String fmt1 = "%1$2s %2$1s%t% %3$2s %4$40s%t% %5$40s%t% %6$20s%t% %7$20s%n";
+        System.out.format(fmt1, headers[0]," ",headers[1],"/t",headers[2]," ",headers[3],"                    ",headers[4],"                 ",headers[5],"                ",headers[6]);
+        
+        for (int i=0 ; i< allstudents.size();i++)
+        {
+            System.out.format(fmt,allstudents.get(i).getId(),allstudents.get(i).getName(),allstudents.get(i).getGrade(),
+                    allstudents.get(i).getEmail(),allstudents.get(i).getAddress(),allstudents.get(i).getRegion(),allstudents.get(i).getCountry());
+        }
+    }
         public static void print (List<Courses> courses)
         {
             String fmt = "%1$2d %2$1s %3$2d %4$40s %5$40s %6$20s %7$20s%n";
@@ -35,7 +46,7 @@ public class view {
         for (int i=0 ; i< courses.size();i++)
         {
             System.out.format(fmt,courses.get(i).getId(),courses.get(i).getCourseName(),courses.get(i).getInstructor(),
-                    courses.get(i).getCourseduration(),courses.get(i).getCoursetime(),courses.get(i).getLocation());
+                    courses.get(i).getCourseDuration(),courses.get(i).getCourseTime(),courses.get(i).getLocation());
         }
         
 //            ArrayList<JSObject> jobject2= new ArrayList<>();

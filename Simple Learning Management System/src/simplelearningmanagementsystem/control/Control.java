@@ -19,12 +19,14 @@ public class Control {
     ScrFiles xf = new ScrFiles();
     ArrayList<Students> students;
     ArrayList<Courses> courses;
+    ArrayList <Students> allstudents ;
 
     public Control() {
         System.out.println("ـــــــــ" + "\n Students Data List : \n" + "ـــــــــ  ");
         try {
-            this.courses = xf.readxFile("\\simplelearningmanagementsystem\\scr\\coursedata.xml");
-            this.students = tf.readtfile("\\simplelearningmanagementsystem\\scr\\student-data.txt");
+            this.courses = xf.readxFile("C:\\Users\\AMAL\\Documents\\NetBeansProjects\\Simple Learning Management System\\src\\simplelearningmanagementsystem\\scr\\coursedata.xml");
+//            this.students = tf.readtfile("C:\\Users\\AMAL\\Documents\\NetBeansProjects\\Simple Learning Management System\\src\\simplelearningmanagementsystem\\scr\\student-data.txt");
+            this.allstudents = tf.readtfile("C:\\Users\\AMAL\\Documents\\NetBeansProjects\\Simple Learning Management System\\src\\simplelearningmanagementsystem\\scr\\student-data.txt");
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
@@ -37,42 +39,41 @@ public class Control {
 //        System.out.println("save!");
     }
 
-    public String selectstudent() {
+    public void selectstudent() {
         System.out.println("Please select the id of the required studend: ");
         Scanner id = new Scanner(System.in);
-
-        String sdata = "";
-
-        return sdata;
+        int sid = id.nextInt();
+         this.students.get(sid);
+        
     }
 
     public void menu() {
 
-        System.out.println("Please select the required action:"
-                + "a- Enroll in a course\n"
-                + "d - Unenrollfrom an existing course\n"
-                + "r - Replacing an existing course\n"
-                + "b - Back to the main page ");
+        System.out.println("Please select the required action:");
+        System.out.println("a- Enroll in a course\n");
+        System.out.println("d - Unenrollfrom an existing course\n");
+        System.out.println("r - Replacing an existing course\n");
+        System.out.println("b - Back to the main page ");
         Scanner input = new Scanner(System.in);
         String action =  input.next();
         switch (action) {
             case "a":
-                System.out.println("");
+                System.out.println("a");
                 break;
             case "d":
-                System.out.println("");
+                System.out.println("d");
                 break;
             case "r":
-                System.out.println("");
+                System.out.println("r");
                 break;
             case "b":
-                System.out.println("");
+                System.out.println("b");
                 break;
-            default: System.out.println("Please select the required action:"
-                + "a- Enroll in a course\n"
-                + "d - Unenrollfrom an existing course\n"
-                + "r - Replacing an existing course\n"
-                + "b - Back to the main page ");    
+            default: System.out.println("Please select the required action:");
+                    System.out.println("a- Enroll in a course\n");
+                    System.out.println("d - Unenrollfrom an existing course\n");
+                    System.out.println("r - Replacing an existing course\n");
+                    System.out.println("b - Back to the main page "); 
             }
             
     }
